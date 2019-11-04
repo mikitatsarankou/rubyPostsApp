@@ -1,0 +1,30 @@
+<% content_for :page_title, "what's up in your mind?" %>
+<section class="section">
+	<div class="container">
+		
+		<% @posts.each do |post| %>
+		<div class="box">
+			<div class="media">
+				<div class="media-content">
+					<p class="title is-2">
+								id <%= post.id %>, <%= link_to post.title.gsub('-', '—'), post %> 
+					</p>
+				</div>
+			</div>
+			<div class="content">
+				<p class="title">
+					<%= post.content.gsub('-', '—')%>
+				</p>
+			</div>
+
+			<div class="time">
+					published at: <%= post.created_at %>
+			</div>
+			</div>
+		
+		<% end %>	
+		</div>
+	
+	
+
+</section>
